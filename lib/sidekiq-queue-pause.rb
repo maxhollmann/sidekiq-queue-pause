@@ -1,4 +1,8 @@
-require 'celluloid'
+begin
+  require 'celluloid'
+rescue LoadError
+  # Sidekiq 4+
+end
 require 'sidekiq'
 require 'sidekiq/fetch'
 
